@@ -7,6 +7,8 @@
 ![Tech Stack](https://img.shields.io/badge/Frontend-React%2019%20%7C%20Three.js%20%7C%20TailwindCSS-10b981?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
 
+**🔗 Live: [ajay-portfolio-taupe-three.vercel.app](https://ajay-portfolio-taupe-three.vercel.app)**
+
 ---
 
 ## 🎯 Positioning
