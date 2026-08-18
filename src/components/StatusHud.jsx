@@ -1,16 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Activity, ShieldCheck, Cpu, Terminal, Zap, CheckCircle2, AlertCircle } from 'lucide-react';
+import React from 'react';
+import { ShieldCheck, Cpu, Terminal, Zap, CheckCircle2, AlertCircle } from 'lucide-react';
 
 export default function StatusHud({ activeBlock }) {
-  const [txCount, setTxCount] = useState(1048576);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTxCount((prev) => prev + Math.floor(Math.random() * 8) + 1);
-    }, 1500);
-    return () => clearInterval(interval);
-  }, []);
-
   const blockDetails = {
     UVM: { name: 'UVM 1.2 Testbench Architecture', status: 'ACTIVE & REUSABLE', desc: 'Driver, Monitor, Sequencer, Scoreboard & Coverage Components' },
     SYSTEMVERILOG: { name: 'SystemVerilog HVL', status: 'COMPILED (XCELIUM)', desc: 'Constrained-Random Stimulus, OOP Classes, Interfaces' },
@@ -90,15 +81,6 @@ export default function StatusHud({ activeBlock }) {
             <span className="text-[10px]">Hover or click chip blocks to inspect UVM components</span>
           </div>
         )}
-      </div>
-
-      {/* Footer Metrics ticker */}
-      <div className="mt-3 pt-2 border-t border-white/10 flex items-center justify-between text-[10px] text-slate-400">
-        <span className="flex items-center gap-1">
-          <Activity className="w-3 h-3 text-[#00f0ff]" />
-          SIM TRANSACTIONS:
-        </span>
-        <span className="font-mono text-[#00f0ff] font-bold">{txCount.toLocaleString()}</span>
       </div>
     </div>
   );
