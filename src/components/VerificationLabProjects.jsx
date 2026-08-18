@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Cpu, ExternalLink, ShieldAlert, CheckCircle2, ChevronDown, ChevronUp, Layers, Terminal, ArrowRight } from 'lucide-react';
+import { Cpu, ExternalLink, CheckCircle2, ChevronDown, ChevronUp, Layers, Terminal, ArrowRight } from 'lucide-react';
 import { GithubIcon } from './Icons';
 
 export default function VerificationLabProjects() {
@@ -64,12 +64,6 @@ export default function VerificationLabProjects() {
                     <span>{item}</span>
                   </div>
                 ))}
-              </div>
-
-              {/* Disclaimer */}
-              <div className="p-3 rounded-lg bg-amber-950/40 border border-amber-500/30 text-amber-300 text-xs font-mono flex items-start gap-2">
-                <ShieldAlert className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-                <span>Independent portfolio project — fictional DUT, original implementation, no proprietary RTL or client IP reproduced.</span>
               </div>
 
               {/* GitHub Button */}
@@ -161,12 +155,6 @@ export default function VerificationLabProjects() {
                     <span>{item}</span>
                   </div>
                 ))}
-              </div>
-
-              {/* Disclaimer */}
-              <div className="p-3 rounded-lg bg-amber-950/40 border border-amber-500/30 text-amber-300 text-xs font-mono flex items-start gap-2">
-                <ShieldAlert className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-                <span>Independent portfolio project — fictional protocol and DUT, created from scratch for demonstration.</span>
               </div>
 
               {/* GitHub Button */}
