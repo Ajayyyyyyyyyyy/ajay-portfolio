@@ -315,11 +315,18 @@ export default function Hero3DCanvas({ activeBlock, setActiveBlock }) {
   }
 
   return (
-    <div className="relative w-full h-full min-h-[440px] flex items-center justify-center">
-      <div ref={mountRef} className="w-full h-full absolute inset-0 cursor-grab active:cursor-grabbing" />
+    <div className="relative w-full h-full flex flex-col items-center">
+      {/* WebGL mount: flexes to fill whatever space the label row (below)
+          doesn't take on mobile; on sm+ the label row is pulled out of flow
+          via sm:absolute, so this fills the full box exactly as before. */}
+      <div className="relative w-full flex-1 min-h-[240px] sm:min-h-0">
+        <div ref={mountRef} className="w-full h-full absolute inset-0 cursor-grab active:cursor-grabbing" />
+      </div>
 
-      {/* Floating 3D Die Block Labels Overlay */}
-      <div className="absolute bottom-4 left-4 right-4 flex flex-wrap justify-center gap-2 pointer-events-auto z-10">
+      {/* Die Block Labels — normal document flow on mobile (so wrapped rows
+          can never overlap the status panel below), floating overlay on the
+          chip from the sm breakpoint up. */}
+      <div className="w-full flex flex-wrap justify-center gap-1.5 px-2 py-3 sm:absolute sm:bottom-4 sm:left-4 sm:right-4 sm:gap-2 sm:px-4 sm:py-0 pointer-events-auto z-10">
         {[
           { id: 'UVM', label: 'UVM' },
           { id: 'SYSTEMVERILOG', label: 'SYSTEMVERILOG' },
@@ -332,7 +339,7 @@ export default function Hero3DCanvas({ activeBlock, setActiveBlock }) {
           <button
             key={block.id}
             onClick={() => setActiveBlock(block.id)}
-            className={`px-2.5 py-1 rounded text-[11px] font-mono transition-all duration-200 ${
+            className={`px-2 py-1 sm:px-2.5 rounded text-[10px] sm:text-[11px] font-mono transition-all duration-200 ${
               activeBlock === block.id
                 ? 'bg-[#00f0ff] text-black font-bold shadow-[0_0_15px_rgba(0,240,255,0.7)] scale-105'
                 : 'bg-[#0a0d14]/80 text-slate-300 border border-[#00f0ff]/30 hover:border-[#00f0ff] hover:text-[#00f0ff]'

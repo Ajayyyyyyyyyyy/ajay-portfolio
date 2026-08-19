@@ -131,12 +131,12 @@ export default function Hero() {
           {/* Right Column: Interactive 3D Chip Canvas & Status Panel */}
           <div className="lg:col-span-6 flex flex-col items-center justify-center relative">
             {/* 3D Chip Canvas */}
-            <div className="w-full h-[400px] sm:h-[460px] relative">
+            <div className="w-full h-[420px] sm:h-[460px] relative">
               <Hero3DCanvas activeBlock={activeBlock} setActiveBlock={setActiveBlock} />
             </div>
 
             {/* Status HUD next to / below chip */}
-            <div className="w-full max-w-sm mt-2 z-20">
+            <div className="w-full max-w-sm mt-4 z-20">
               <StatusHud activeBlock={activeBlock} />
             </div>
           </div>
